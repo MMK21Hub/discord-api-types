@@ -2,6 +2,7 @@ import type { Snowflake } from '../../globals';
 
 export * from '../common';
 
+export * from './applicationDirectory'
 export * from './auditLog';
 export * from './channel';
 export * from './emoji';
@@ -845,6 +846,26 @@ export const Routes = {
 	guildScheduledEventUsers(guildId: Snowflake, guildScheduledEventId: Snowflake) {
 		return `/guilds/${guildId}/scheduled-events/${guildScheduledEventId}/users`;
 	},
+
+	applicationDirectoryApplication(applicationId: Snowflake) {
+		return `/application-directory/applications/${applicationId}`
+	},
+
+	applicationDirectoryCategories() {
+		return `/application-directory/categories` as const
+	},
+
+	applicationDirectorySimilar(applicationId: Snowflake) {
+		return `/application-directory/applications/${applicationId}/similar`
+	},
+
+	applicationDirectoryReccomended(guildId: Snowflake) {
+		return `/application-directory/applications/recommended?guild_id=${guildId}`
+	},
+
+	applicationDirectorySearch(query: string, guildId: Snowflake) {
+		return `/application-directory/applications?query=${query}&guild_id=${guildId}`
+	}
 };
 
 export const RouteBases = {
