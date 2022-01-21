@@ -860,11 +860,11 @@ export const Routes = {
 	},
 
 	applicationDirectoryReccomended(guildId: Snowflake) {
-		return `/application-directory/applications/recommended?guild_id=${guildId}`
+		return `/application-directory/applications/recommended`
 	},
 
 	applicationDirectorySearch(query: string, guildId: Snowflake) {
-		return `/application-directory/applications?query=${query}&guild_id=${guildId}`
+		return `/application-directory/applications`
 	}
 };
 
